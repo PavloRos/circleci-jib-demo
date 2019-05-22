@@ -8,6 +8,7 @@ jobs:
     steps:
       - sonar/scan
             
+            
 workflows:
   scan:
     jobs:
