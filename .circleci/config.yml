@@ -7,7 +7,6 @@ jobs:
     executor: sonar/default
     steps:
       - sonar/scan
-         sonar-owner: pavloros-github
             
 workflows:
   scan:
