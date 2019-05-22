@@ -6,8 +6,7 @@ jobs:
   code_quality_scan:
     executor: sonar/default
     steps:
-      - sonar/scan 
-    
+      - sonar/scan
 workflows:
   scan:
     jobs:
