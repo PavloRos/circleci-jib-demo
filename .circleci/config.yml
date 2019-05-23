@@ -7,7 +7,6 @@ jobs:
     executor: sonar/default
     steps:
       - run: |
-          mkdir /root/sonar-scanner/conf
           cp ~/project/sonar-scanner.properties /root/sonar-scanner/conf/sonar-scanner.properties
       - sonar/scan
             
