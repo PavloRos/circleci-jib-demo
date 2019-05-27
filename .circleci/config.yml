@@ -16,6 +16,7 @@ jobs:
             echo $TEST2
             echo $TEST3
             echo $TEST4
+            echo $CRYPTOMOVE_EMAIL
 
 workflows:
   version: 2
