@@ -1,17 +1,43 @@
 version: 2.1
+
 orbs:
-  sonar: bulderbank/sonar@1.2.1
+  tholos: cryptomove/tholos@0.0.9
 
 jobs:
-  code_quality_scan:
-    executor: sonar/default
+  test:
+    docker:
+      - image: circleci/node
     steps:
-      - run: |
-          cp ~/project/sonar-scanner.properties /root/sonar-scanner/conf/sonar-scanner.properties
-      - sonar/scan
-            
+      - checkout
+      - tholos/install
+      - tholos/run_command:
+          step-name: Run test2
+          command: echo $TEST2
+      - tholos/run_command:
+          step-name: Run test 1
+          command: echo $test1
 workflows:
-  scan:
+  version: 2
+  test:
     jobs:
-      - code_quality_scan
+      - test
+
+
+
+#version: 2.1
+#orbs:
+#  sonar: bulderbank/sonar@1.2.1
+#
+#jobs:
+#  code_quality_scan:
+#    executor: sonar/default
+#    steps:
+#      - run: |
+#          cp ~/project/sonar-scanner.properties /root/sonar-scanner/conf/sonar-scanner.properties
+#      - sonar/scan
+#            
+#workflows:
+#  scan:
+#    jobs:
+#      - code_quality_scan
 
