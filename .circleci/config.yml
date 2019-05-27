@@ -12,10 +12,11 @@ jobs:
       - tholos/install
       - tholos/run_command:
           step-name: Run test2
-          command: echo $TEST2
-      - tholos/run_command:
-          step-name: Run test 1
-          command: echo $test1
+          command: |
+            echo $TEST2
+            echo $TEST3
+            echo $TEST4
+
 workflows:
   version: 2
   test:
